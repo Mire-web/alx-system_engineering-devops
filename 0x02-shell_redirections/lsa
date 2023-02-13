@@ -1,0 +1,14 @@
+total 44
+4 -rwxr-xr-x 1 root root  32 Feb 13 09:32 0-hello_world
+4 -rwxr-xr-x 1 root root  28 Feb 13 09:32 1-confused_smiley
+4 -rwxr-xr-x 1 root root  28 Feb 13 09:32 2-hellofile
+4 -rwxr-xr-x 1 root root  39 Feb 13 09:32 3-twofiles
+4 -rwxr-xr-x 1 root root  35 Feb 13 09:32 4-lastlines
+4 -rwxr-xr-x 1 root root  35 Feb 13 09:32 5-firstlines
+4 -rwxr-xr-x 1 root root  40 Feb 13 09:32 6-third_line
+4 -rwxr-xr-x 1 root root 100 Feb 13 09:32 7-file
+4 -rwxr-xr-x 1 root root  97 Feb 13 09:32 7-file~
+4 -rw-r--r-- 1 root root  12 Feb 13 09:32 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+0 -rw-r--r-- 1 root root   0 Feb 13 09:32 \*\\'Best\ School\'\\*$\?\*\*\*\*\*:)
+0 -rw-r--r-- 1 root root   0 Feb 13 09:35 lsa
+4 -rw-r--r-- 1 root root  21 Feb 13 09:32 README.md
