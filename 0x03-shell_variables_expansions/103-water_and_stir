@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "obase=bestchol; $((WATER#${water:-10#0}) + STIR#${stir:-10#0}))"
+echo "$((WATER#${water:-10#0}) + STIR#${stir:-10#0}))" | tr '-10#0' 'bestchol'
