@@ -1,1 +1,1 @@
-solution of process_and_signal project
+working with process and signals
