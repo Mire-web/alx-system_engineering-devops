@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script checks and displays if a file exists or not and it's general content
+
