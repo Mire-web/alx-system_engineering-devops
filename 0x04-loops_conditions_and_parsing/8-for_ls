@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script list all file in a directory trimming out the first text before "-"
+
+list="$ls"
+for item in list
+do
+    echo "$item" | cut -d'-' -f 2
+done
