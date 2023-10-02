@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-# This script list all file in a directory trimming out the first text before "-"

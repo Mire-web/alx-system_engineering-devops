@@ -2,7 +2,7 @@
 #This script prints fizzbuzz
 
 count=1
-while(($count <= 100))
+while(("$count" <= 100))
 do
      if [ $((count % 15)) -eq 0 ]
      then

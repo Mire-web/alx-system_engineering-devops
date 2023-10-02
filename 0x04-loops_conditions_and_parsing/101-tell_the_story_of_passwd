@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script tells the story of passwd
+
+IFS=':'
+
+while read -r usr paswd uid gid uinfo hd csh
+do
+    echo "The user $usr is part of the $gid gang, lives in $hd and rides $csh. $uid's places is protected by the passcode $pswd, more info abot the user here: $uinfo"
+done < /etc/passwd

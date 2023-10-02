@@ -6,7 +6,7 @@ count=1
 while(("$count" <= 20))
 do
      echo "$count"
-     case $count in
+     case "$count" in
 	 4)
 	     echo "bad luck from china"
 	     ;;
@@ -19,4 +19,4 @@ do
      esac
      ((count++))
 done
-     
+echo >&2
