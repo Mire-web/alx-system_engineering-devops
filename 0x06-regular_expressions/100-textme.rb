@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+# To get the sender name or phone, receiver name or phone and flags used
+
+
+puts ARGV[0].scan(/\[from:+?(.*)\] \[to:+?(.*)\] \[flags:(.*?)\]/).join(",")
