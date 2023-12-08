@@ -1,5 +1,0 @@
-include /etc/ssh/ssh_config.d/*.conf
-
-Host *
-    PasswordAuthentication no
-    IdentityFile ~/.ssh/school
