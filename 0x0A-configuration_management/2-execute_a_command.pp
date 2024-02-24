@@ -1,4 +1,6 @@
 # Kill current running process
 exec{'killmenow':
-  command => '/bin/pkill -15 $(pidof killmenow)',
+  command => '/usr/bin/pkill killmenow',
+  provider=> 'shell',
+  returns => [0, 1],
 }
