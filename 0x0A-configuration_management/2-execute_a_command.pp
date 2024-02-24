@@ -1,2 +1,4 @@
 # Kill current running process
-ser
+exec{'killmenow':
+  command => '/bin/pkill -15 $(pidof killmenow)',
+}
