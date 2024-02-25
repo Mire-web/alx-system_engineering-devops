@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Connect to remote server ubuntu@8.8.8.8
+
+echo cat ~/.ssh/school | ssh ubuntu@54.159.24.203 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+command ssh ubuntu@54.159.24.203
