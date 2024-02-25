@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo Betty\n betty\n Bet\n >> text.txt && cat text.txt
