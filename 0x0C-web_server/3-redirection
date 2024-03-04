@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Script that configures a new Ubuntu machine to respect above requirements
+# Install and configure Nginx on the server
 
-sudo apt-get update
-sudo apt-get install -y nginx
-
-echo "Hello World!" | sudo tee /var/www/html/index.html
-string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.techhub.com permanent;"
-sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
-
-sudo service nginx restart
+apt-get update
+apt-get install nginx -y
+ufw allow 'Nginx HTTP'
+rm /var/www/html/index.nginx-debian.html
+echo "Hello World!" > /var/www/html/index.html
+new_string="location /redirect_me {\\nreturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4\\n}\\nlocation /"
+old_string="location /"
+sed -i "s|$old_string|$new_string|" /etc/nginx/sites-available/default
+service nginx start
