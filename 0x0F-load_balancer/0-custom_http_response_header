@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Install and configure Nginx on the server
+
+# shellcheck disable=SC2154
+apt-get update
+apt-get install nginx -y
+ufw allow 'Nginx HTTP'
+rm /var/www/html/index.nginx-debian.html
+echo "Hello World!" > /var/www/html/index.html
+domain_ip=$(curl -s ifconfig.me/ip)
+new_string="server_name _;\\n\\tlocation /redirect_me {\\n\\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\\n\\t}\\n"
+old_string="server_name _;"
+sed -i "s|$old_string|$new_string|" /etc/nginx/sites-available/default
+new_head="location / {\\n\\tadd_header X-Served-By $domain_ip;"
+old_head="location / {"
+sed -i "s|$old_head|$new_head|" /etc/nginx/sites-available/default
+service nginx start
+service nginx restart
