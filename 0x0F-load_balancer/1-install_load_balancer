@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Install Haproxy and configure new load balancer
+
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy-2.8
+apt-get install haproxy=2.8.\*
+old_string="errorfile 504 /etc/haproxy/errors/504.http"
+new_string="errorfile 504 /etc/haproxy/errors/504.http\\nfrontend http\\n\\tbind *:80\\n\\tmode http\\n\\tdefault_backend servers\\n\\nbackend servers\\n\\tbalance roundrobin\\n\\tmode http\\n\\tserver 247276-web-01 34.229.71.240:80 check\\n\\tserver 247276-web-02 54.86.228.177:80 check"
+sed -i "s|$old_string|$new_string|" /etc/haproxy/haproxy.cfg
+service haproxy start
