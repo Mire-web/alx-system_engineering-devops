@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# configure nginx to run on port 80
+
+sudo apt-get update
+sudo apt-get install -y net-tools nginx
+nginx_status=$(sudo systemctl status nginx)
+active_port_80=$(sudo netstat -tulpn | grep :80)
+
+if [[ $nginx_status =~ "active (running)" && $active_port_80 =~ ":80" ]]; then
+else
+    sudo sed -i '/listen 80;/d' /etc/nginx/sites-available/default
+    sudo sed -i '/server_name _;/a \\tlisten 80;' /etc/nginx/sites-available/default
+    sudo service nginx restart
+fi
