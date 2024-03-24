@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# Check current user
-
-if [$# -eq 0]; then
-    whoami
-else
-    sudo -u "$1" whoami
-fi
