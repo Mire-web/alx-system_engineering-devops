@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Fix Nginx not starting
+
+old_string="include /etc/nginx/sites-enabled/*;"
+new_string="include /etc/nginx/sites-enabled/*;\\nserver {\\n\\tlisten 80;\\n\\t}"
+sed -i "s|$old_string|$new_string" /etc/nginx/nginx.conf
+sudo service nginx restart
