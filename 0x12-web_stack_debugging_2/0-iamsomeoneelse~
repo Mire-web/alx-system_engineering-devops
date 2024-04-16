@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Echo current effective user id
+
+if [ $# -ge 1 ]; then
+   sudo -u '$1' whoami
+else
+   whoami
+fi
