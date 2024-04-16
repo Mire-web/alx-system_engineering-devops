@@ -2,7 +2,7 @@
 # Echo current effective user id
 
 if [ $# -ge 1 ]; then
-   sudo -u $1 whoami
+   sudo -u "$1" whoami
 else
    whoami
 fi
