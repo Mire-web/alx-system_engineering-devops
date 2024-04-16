@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Ensure nginx is running as nginx and listening on port:8080
-sudo sed -i "s/80/8080/g" /etc/nginx/sites-enabled
+sudo sed -i "s/80/8080/g" /etc/nginx/sites-enabled/default
 sudo sed -i "s/user www-data/user nginx" /etc/nginx/nginx.conf
-sudo nginx -a "*:8080"
+pkill apache2
 sudo -u nginx service nginx restart
