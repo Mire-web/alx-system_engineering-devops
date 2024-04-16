@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Ensure nginx is running as nginx and listening on port:8080
+sudo nginx -u nginx -a *:8080
+sudo service nginx restart
