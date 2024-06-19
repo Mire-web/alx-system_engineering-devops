@@ -10,7 +10,7 @@ def top_ten(subreddit):
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
     headers = {'User-Agent': 'top_ten'}
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, allow_redirects=False)
         response.raise_for_status()
         result = response.json().get('data').get('children')
         titles = [data.get('data').get('title') for data in result]
