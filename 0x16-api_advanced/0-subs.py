@@ -10,7 +10,7 @@ def number_of_subscribers(subreddit):
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     try:
         result = requests.get(url, headers={'User-Agent': 'subs'})
-        result.raise_as_status()
+        result.raise_for_status()
     except Exception:
         return 0
     return result.json()['data']['subscribers']
