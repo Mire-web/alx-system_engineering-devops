@@ -7,10 +7,11 @@ import requests
 
 
 def number_of_subscribers(subreddit):
+    """Function to return subcriber count"""
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    headers = {'User-Agent': 'Google Chrome Version 125.0.6422.115'}
+    headers = {'User-Agent': 'Mirey/1.0'}
     try:
-        result = requests.get(url, headers=headers, allow_redirects=False)
+        result = requests.get(url, allow_redirects=False, headers=headers)
         result.raise_for_status()
     except Exception:
         return 0
