@@ -7,6 +7,9 @@ import requests
 
 
 def top_ten(subreddit):
+    """
+    function that queries the Reddit API and prints top ten topics
+    """
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
     headers = {'User-Agent': 'top_ten'}
     try:
