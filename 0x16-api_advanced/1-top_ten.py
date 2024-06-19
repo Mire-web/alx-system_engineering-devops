@@ -11,7 +11,7 @@ def top_ten(subreddit):
     function that queries the Reddit API and prints top ten topics
     """
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
-    headers = {'User-Agent': 'top_ten'}
+    headers = {'User-Agent': 'Google Chrome Version 125.0.6422.142 '}
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
         response.raise_for_status()
