@@ -10,10 +10,10 @@ def top_ten(subreddit):
     """
     function that queries the Reddit API and prints top ten topics
     """
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
-    headers = {'User-Agent': 'Google Chrome Version 125.0.6422.142 '}
+    url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
+    headers = {'User-Agent': 'Mirey/1.0'}
     try:
-        response = requests.get(url, headers=headers, allow_redirects=False)
+        response = requests.get(url, allow_redirects=False, headers=headers)
         response.raise_for_status()
         result = response.json().get('data').get('children')
         titles = [data.get('data').get('title') for data in result]
