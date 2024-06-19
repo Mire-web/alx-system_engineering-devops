@@ -16,5 +16,5 @@ def top_ten(subreddit):
         titles = [data.get('data').get('title') for data in result]
         for title in titles:
             print(title)
-    except requests.exceptions.HTTPError as http_err:
+    except requests.exceptions.RequestException as req_err:
         print(None)
