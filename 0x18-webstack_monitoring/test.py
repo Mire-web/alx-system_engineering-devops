@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+import requests
+import json
+
+# Replace with your actual Datadog API and application keys
+API_KEY = '107015764ea1c5af90d1c75bbc99498b'
+APP_KEY = '740ba85da0d10bcf47a84451732004e650232de0'
+
+# URL for the Datadog API to list all dashboards
+url = 'https://api.datadoghq.com/api/v1/dashboard'
+headers = {
+        'DD-API-KEY': API_KEY,
+        'DD-APPLICATION-KEY': APP_KEY
+    }
+
+def get_dashboard_ids():
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        dashboards = response.json()
+        for dashboard in dashboards.get('dashboards', []):
+            print(f"Title: {dashboard['title']}, ID: {dashboard['id']}")
+    else:
+        print(f"Error: {response.status_code}")
+    print(response.json())
+
+if __name__ == "__main__":
+    get_dashboard_ids()
+                                                            
