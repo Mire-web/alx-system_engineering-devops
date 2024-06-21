@@ -1,18 +1,27 @@
 #!/usr/bin/python3
 """
-Script to get subcriber count for reddit
-AUTHOR: Mire-web
+Importing requests module
 """
-import requests
+
+from requests import get
 
 
 def number_of_subscribers(subreddit):
-    """Function to return subcriber count"""
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    headers = {'User-Agent': 'Mirey/1.0'}
-    try:
-        result = requests.get(url, allow_redirects=False, headers=headers)
-        result.raise_for_status()
-    except Exception:
+    """
+    function that queries the Reddit API and returns the number of subscribers
+    (not active users, total subscribers) for a given subreddit.
+    """
+
+    if subreddit is None or not isinstance(subreddit, str):
         return 0
-    return result.json()['data']['subscribers']
+
+    user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    response = get(url, headers=user_agent)
+    all_data = response.json()
+
+    try:
+        return all_data.get('data').get('subscribers')
+
+    except:
+        return 0
