@@ -1,7 +1,8 @@
-
 #!/usr/bin/python3
 """
-Script to recursively return list containing the title of all hot articles for a subreddit
+Script to recursively return list containing the title of all
+hot articles for a subreddit
+AUTHOR: Mire-web
 """
 import requests
 params = {
@@ -15,7 +16,8 @@ def recurse(subreddit, hot_list=[]):
     headers = {'User-Agent': 'Mirey 1.0 by mirey'}
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     try:
-        res = requests.get(url, headers=headers, params=params, allow_redirects=False)
+        res = requests.get(url, headers=headers,
+                           params=params, allow_redirects=False)
         after = res.json().get('data').get('after')
         data_set = res.json()['data']['children']
         for data in data_set:
