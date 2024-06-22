@@ -1,4 +1,4 @@
-![BOOM BOOM](https://giphy.com/clips/theoffice-the-office-peacock-tv-show-eK17Q8JUz2DHWtb2IY)
+![BOOM BOOM]("https://giphy.com/embed/eK17Q8JUz2DHWtb2IY/video")
 
 # AND THE SERVER WENT BOOM 💥💥
 This is the postmortem of the incident which sadly frustrated our users for an entire hour and thirty minutes on friday 21st June, 2024.
