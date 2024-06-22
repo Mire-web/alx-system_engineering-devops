@@ -31,13 +31,12 @@ def count_words(subreddit, word_list):
                         word_count[word] = title.count(word)
         if after:
             params['after'] = after
-            return count_words(subreddit, word_list)
+            count_words(subreddit, word_list)
         else:
             sorted_dict = sorted(word_count.items(),
                                  key=lambda item: (-item[1], item[0]))
             for key, item in sorted_dict:
                 print('{}: {}'.format(key, item))
-            return 0
     except Exception as e:
         print(e)
         return None
