@@ -1,4 +1,5 @@
-![BOOM BOOM]("https://giphy.com/gifs/noodlesagency-fire-server-serveronfire-sMKedUx9w9m8OGwXi6")
+![BOOM BOOM](https://media.giphy.com/media/sMKedUx9w9m8OGwXi6/giphy.gif)
+
 
 # AND THE SERVER WENT BOOM 💥💥
 This is the postmortem of the incident which sadly frustrated our users for an entire hour and thirty minutes on friday 21st June, 2024.
