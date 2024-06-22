@@ -38,5 +38,4 @@ def count_words(subreddit, word_list):
             for key, item in sorted_dict:
                 print('{}: {}'.format(key, item))
     except Exception as e:
-        print(e)
         return None
