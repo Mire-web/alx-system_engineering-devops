@@ -1,4 +1,4 @@
-![BOOM BOOM](https://media.giphy.com/media/sMKedUx9w9m8OGwXi6/giphy.gif)
+![BOOM BOOM](https://media.giphy.com/media/eK17Q8JUz2DHWtb2IY/giphy.gif)
 
 
 # AND THE SERVER WENT BOOM 💥💥
