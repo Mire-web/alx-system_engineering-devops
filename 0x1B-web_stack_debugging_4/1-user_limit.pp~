@@ -1,0 +1,4 @@
+exec {'Increase-hard-limit':
+  command => 'sed -i /holberton nofile 5/ /holberton nofile 50000',
+  path    => '/usr/bin/bash',
+}
