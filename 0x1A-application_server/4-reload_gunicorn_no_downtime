@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Gracefully restart workers process gunicorn
 
-ps aux | grep gunicorn | awk '{ print 2 }' | xargs kill -HUP
+ps aux | grep gunicorn | awk '{ print 2 }' | xargs -n 1 kill -HUP
