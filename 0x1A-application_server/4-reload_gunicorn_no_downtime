@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Gracefully restart workers process gunicorn
 
-pgrep gunicorn | awk '{ print 2 }' | sudo xargs -n 1 kill -HUP
+pgrep gunicorn | sudo xargs kill -HUP
