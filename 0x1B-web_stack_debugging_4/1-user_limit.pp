@@ -1,3 +1,4 @@
+# Increase limits for user profile 
 exec {'Increase-hard-limit':
   command => 'sed -i "/holberton/s/5/50000/" /etc/security/limits.conf',
   path    => '/usr/local/bin/:/bin/',
